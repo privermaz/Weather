@@ -1,3 +1,4 @@
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -6,322 +7,89 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
   min-height: 100vh;
-  color: white;
-  overflow-x: hidden;
-  position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  background-image:url("https://cdn.discordapp.com/attachments/1368226175050186794/1376580544149852301/a5befa6d9244f0687fe32db5f0da8c5b.jpg?ex=6835d809&is=68348689&hm=29b4f45c3364421f038f2d9629003e4ef1a6e4da3a6d33164f21d1cec3837d1a&");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-}
-
-.portfolio-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 25px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transform: scale(0.8) translateY(20px);
-}
-
-.profile-section {
-  text-align: center;
-}
-
-.profile-image {
-  margin-bottom: 15px;
-  position: relative;
-  width: 130px;
-  height: 130px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  object-fit: cover;
-  display: block;
-  box-shadow: 
-    0 0 30px rgba(255, 215, 0, 0.3),
-    0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.verified-badge {
-  background: linear-gradient(45deg, #1da1f2, #00d4ff);
-  color: white;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   justify-content: center;
-  font-size: 10px;
-  font-weight: bold;
-  box-shadow: 0 0 15px rgba(29, 161, 242, 0.5);
-  animation: glow-pulse 2s ease-in-out infinite alternate;
-}
-
-.premium-badge {
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
-  color: #1a1a2e;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: bold;
-  margin-left: 8px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-  animation: premium-glow 3s ease-in-out infinite;
-}
-
-@keyframes glow-pulse {
-  0% { box-shadow: 0 0 15px rgba(29, 161, 242, 0.5); }
-  100% { box-shadow: 0 0 25px rgba(29, 161, 242, 0.8); }
-}
-
-@keyframes premium-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
-  50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.5); }
-}
-
-.about-card, .social-card, .skills-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 25px;
-  margin: 25px 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease;
-  position: relative;
-}
-
-.about-card:hover, .social-card:hover, .skills-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-}
-
-.card-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 20px;
-  box-shadow: 
-    0 4px 15px rgba(102, 126, 234, 0.4),
-    0 0 20px rgba(118, 75, 162, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.card-header:hover::before {
-  left: 100%;
-}
-
-.about-content {
-  text-align: left;
-  line-height: 1.6;
-}
-
-.about-content p {
-  margin-bottom: 5px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.social-status {
-  margin-bottom: 20px;
-}
-
-.social-status p {
-  margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.status-item {
-  display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.status-dot.active {
-  background: #4caf50;
-  box-shadow: 0 0 10px #4caf50;
-}
-
-.status-dot.less-active {
-  background: #ff9800;
-  box-shadow: 0 0 10px #ff9800;
-}
-
-.status-dot.inactive {
-  background: #f44336;
-  box-shadow: 0 0 10px #f44336;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: space-around;
-  padding: 15px 0;
-}
-
-.social-icon {
-  position: relative;
-  font-size: 18px;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.2s ease, background 0.2s ease;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.social-icon:hover {
-  transform: translateY(-8px) scale(1.1);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-.social-icon i {
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover i {
-  color: #00d4ff;
-}
-
-.social-icon .status-dot {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 8px;
-  height: 8px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  text-align: center;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Container styling */
+.weather-container {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
   transition: all 0.3s ease;
 }
 
-.skill-item:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+/* Heading */
+.weather-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.skill-item i {
-  font-size: 32px;
-  transition: transform 0.3s ease;
+/* Input & Button */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.skill-item:hover i {
-  transform: scale(1.1);
+button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.skill-name {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
-  font-weight: 500;
+button:hover {
+  background-color: #357ab7;
 }
 
+/* Weather info display */
+#weatherInfo {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #222;
+  line-height: 1.6;
+}
 
+/* Weather icons (optional) */
+#weatherInfo p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
 /* Responsive Design */
-@media screen and (max-width: 480px) {
-  .portfolio-container {
-    margin: 10px;
-    padding: 15px;
-    max-width: none;
+@media (max-width: 480px) {
+  .weather-container {
+    padding: 25px 20px;
   }
 
-  .profile-image img {
-    width: 100px;
-    height: 100px;
+  .weather-container h1 {
+    font-size: 1.5rem;
   }
 
-  h1 {
-    font-size: 20px;
-  }
-
-  .about-card, .social-card, .skills-card {
-    padding: 15px;
-    margin: 15px 0;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .skill-item {
-    padding: 15px;
-  }
-
-  .skill-item i {
-    font-size: 28px;
+  button {
+    width: 100%;
+    padding: 12px;
   }
 }
-
-@media screen and (min-width: 768px) {
-  .portfolio-container {
-    max-width: 500px;
-  }
-}
-
