@@ -9,7 +9,7 @@ async function getWeather() {
     return;
   }
 
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
   try {
     const response = await fetch(url);
@@ -28,6 +28,7 @@ async function getWeather() {
       weatherInfo.innerHTML = `<p>City not found!</p>`;
     }
   } catch (error) {
+    console.error(error);
     weatherInfo.innerHTML = `<p>Failed to fetch weather data. Please try again.</p>`;
   }
 }
